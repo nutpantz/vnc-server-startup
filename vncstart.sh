@@ -1,10 +1,10 @@
 #!/bin/bash
 # os tested debian 12 -13
-# title             :firewall and vnc script
+# title             : vnc script
 # description       :tigervnc-scraping-server, log in to the actual X session on display :0 and uncompliaced firewall for pia
 # date              :2025
-# version           :0.6
-# notes             :install tigervnc-scraping-server w PIA VPN  ( with firewall on you will be totally blocked without PIA running and local allowed in PIA)
+# version           :0.1
+# notes             :install tigervnc-scraping-server 
 #
 FW1="   " #setting var variable
 FW2="you have not  FW checked status, so check status"
