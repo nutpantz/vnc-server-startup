@@ -1,10 +1,10 @@
 #!/bin/bash
 # os tested debian 12 -13
-# title             : vnc script
+# title             :firewall and vnc script
 # description       :tigervnc-scraping-server, log in to the actual X session on display :0 and uncompliaced firewall for pia
 # date              :2025
-# version           :0.1
-# notes             :install tigervnc-scraping-server 
+# version           :0.6
+# notes             :install tigervnc-scraping-server w PIA VPN  ( with firewall on you will be totally blocked without PIA running and local allowed in PIA)
 #
 FW1="   " #setting var variable
 FW2="you have not  FW checked status, so check status"
@@ -48,10 +48,7 @@ fn_pid() {
     fi
 }
 
-# vncmenu
-vncmenu () {
-echo "vnc" "$VNC1" #displaying var variable on terminal
-echo "vnc" "$VNC2" #displaying var variable on terminal
+# vncstart
 
 if [ ! -d ${VNCDIR} ]
 then
@@ -75,5 +72,5 @@ fi
             ${VNCSERVER} -SecurityTypes VncAuth,TLSVnc -Geometry ${GEOMETRY} -localhost=0 -interface ${INTERFACE} -display ${DISPLAY} -passwordfile ${PASSWDFILE} -rfbport ${VNCPORT} >> ${LOGFILE} 2>&1 &
 	   echo "if you want to kill the VNC server manually, just type x0vncserver -kill :0 "
 	   
-	   exit 1
-	   
+	   exit
+fi
